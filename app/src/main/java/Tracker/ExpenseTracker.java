@@ -48,6 +48,7 @@ public class ExpenseTracker {
                 case 8:
                     ExpenseStorage.saveExpense(expenses);
                     System.out.println("Exiting.... Hehe LOL");
+                    return;
                 default:
                     System.out.println("Invalid choice. Please try again.");
             }
