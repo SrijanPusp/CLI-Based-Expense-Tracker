@@ -40,10 +40,12 @@ public class ExpenseTracker {
                     func.returnSummary();
                     break;
                 case 6:
-                    func.returnMonthSummary();
+//                    func.returnMonthSummary();
+                    System.out.println("This feature is coming soon...");
                     break;
                 case 7:
-                    func.filterByCategory(scanner);
+//                    func.filterByCategory(scanner);
+                    System.out.println("This feature is coming soon...");
                     break;
                 case 8:
                     ExpenseStorage.saveExpense(expenses);

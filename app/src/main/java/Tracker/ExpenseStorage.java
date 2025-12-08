@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class ExpenseStorage {
-    private static String FILENAME = "Tracker/expense.txt";
+    private static String FILENAME = "expense.txt";
 
     public static void saveExpense(ArrayList<Expense> expenses){
         try {
@@ -18,7 +18,7 @@ public class ExpenseStorage {
 
             PrintWriter writer = new PrintWriter(new FileWriter(file));
             for (Expense e : expenses) {
-                writer.println(e.getDescription() + " , " + e.getDate() + " , " + e.getAmount());
+                writer.println(e.getDescription() + " , " + e.getDate() + " , " + e.getAmount() + " , " + e.getID());
             }
             writer.close();
         } catch (IOException e) {
@@ -31,19 +31,19 @@ public class ExpenseStorage {
         File file = new File(FILENAME);
 
         // FIX: Create the directory if it's missing
-        if (file.getParentFile() != null) {
-            file.getParentFile().mkdirs();
-        }
-
-        if (!file.exists()) {
-            try {
-                file.createNewFile();
-            } catch (IOException e) {
-                // Print the actual error so you can see it in the future
-                System.out.println("Error creating file: " + e.getMessage());
-                throw new RuntimeException(e);
-            }
-        }
+//        if (file.getParentFile() != null) {
+//            file.getParentFile().mkdirs();
+//        }
+//
+//        if (!file.exists()) {
+//            try {
+//                file.createNewFile();
+//            } catch (IOException e) {
+//                // Print the actual error so you can see it in the future
+//                System.out.println("Error creating file: " + e.getMessage());
+//                throw new RuntimeException(e);
+//            }
+//        }
 
         try(BufferedReader reader = new BufferedReader(new FileReader(FILENAME))){
             String line;

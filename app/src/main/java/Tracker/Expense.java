@@ -48,7 +48,7 @@ public class Expense {
         return "Expense{" +
                 "date='" + date + '\'' +
                 ", description='" + description + '\'' +
-                ", amount=" + amount + '\'' +
+                ", amount=" + amount + '\'' + "ID=" + ID +'\'' +
                 '}';
     }
 }
